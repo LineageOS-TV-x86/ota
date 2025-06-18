@@ -1,5 +1,8 @@
 [
   {
     "name": "LineageOS-TV-x86/x86_64_tv"
+  },
+  {
+    "name": "LineageOS-TV-x86/x86_64_tv_go"
   }
 ]
