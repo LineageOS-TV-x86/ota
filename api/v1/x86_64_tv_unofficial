@@ -1,0 +1,19 @@
+{
+    "response": [
+        {
+            "incremental": "eng.hmtheb.20250614.151303",
+            "api_level": "34",
+            "url": "https://github.com/LineageOS-TV-x86/x86_64_tv/releases/download/test/lineage-21.0-20250614-UNOFFICIAL-x86_64_tv-signed.zip",
+            "timestamp": 1749913981,
+            "md5sum": "372655e1c8a1b3cee01d669b67c48a00",
+            "changes": "https://github.com/LineageOS-TV-x86/x86_64_tv/releases/tag/test",
+            "channel": "unofficial",
+            "filename": "lineage-21.0-20250614-UNOFFICIAL-x86_64_tv-signed.zip",
+            "romtype": "unofficial",
+            "datetime": 1749913981,
+            "version": "21.0",
+            "id": "7524f77402b17da28b81745d7054a26f7630a9aed7a7a02930695a3149eda0a7",
+            "size": 1592571192
+        }
+    ]
+}
