@@ -1,6 +1,21 @@
 {
     "response": [
         {
+            "incremental": "eng.lostv.20250618.194225",
+            "api_level": "34",
+            "url": "https://github.com/LineageOS-TV-x86/x86_64_tv/releases/download/20250618-02-alpha/lineage-21.0-20250619-UNOFFICIAL-x86_64_tv-signed.zip",
+            "timestamp": 1750275744,
+            "md5sum": "ef7b9555a956812d3ec3ffcdbe45cfd3",
+            "changes": "https://github.com/LineageOS-TV-x86/x86_64_tv/releases/tag/20250618-02-alpha",
+            "channel": "unofficial",
+            "filename": "lineage-21.0-20250619-UNOFFICIAL-x86_64_tv-signed.zip",
+            "romtype": "unofficial",
+            "datetime": 1750275744,
+            "version": "21.0",
+            "id": "4fceec0bd40db76eb89fe33164c7346885297c1565ab7c46778c8b28deb5b144",
+            "size": 1596796165
+        },
+        {
             "incremental": "eng.lostv.20250618.052511",
             "api_level": "34",
             "url": "https://github.com/LineageOS-TV-x86/x86_64_tv/releases/download/20250618-01-alpha/lineage-21.0-20250618-UNOFFICIAL-x86_64_tv-signed.zip",
