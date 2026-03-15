@@ -125,10 +125,23 @@ class LOTABuilds:
         build['size'] = archive['size']
       for prop in props:
         properties = self.__loadProperties(prop['browser_download_url'])
-        build['timestamp'] = int(properties.get('ro.build.date.utc',build['timestamp']))
-        build['incremental'] = properties.get('ro.build.version.incremental','')
-        build['apiLevel'] = properties.get('ro.build.version.sdk','')
-        build['model'] = properties.get('ro.lineage.device',properties.get('ro.cm.device',build['model']))
+        build['timestamp'] = int(properties.get('ro.build.date.utc', build.get('timestamp', 0)))
+        build['incremental'] = properties.get('ro.build.version.incremental', '')
+        build['apiLevel'] = properties.get('ro.build.version.sdk', '')
+        
+        # Get the model from the .prop file
+        prop_model = properties.get('ro.lineage.device', properties.get('ro.cm.device', ''))
+        
+        # Check for a mismatch and warn the user
+        current_model = build.get('model', '')
+        if current_model and prop_model and current_model != prop_model:
+            print(f'\n  [!] WARNING: Model mismatch detected in release "{release.get("name")}"!')
+            print(f'      Filename model:   {current_model}')
+            print(f'      build.prop model: {prop_model}')
+            print(f'      > Trusting the filename model ({current_model}).\n')
+        elif not current_model and prop_model:
+            # Fallback just in case the filename parsing failed
+            build['model'] = prop_model
       for md5sum in md5sums:
         md5s = self.__loadMd5sums(md5sum['browser_download_url'])
         build['md5'] = md5s.get(build['filename'],'')
