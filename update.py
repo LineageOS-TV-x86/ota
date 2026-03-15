@@ -138,7 +138,11 @@ class LOTABuilds:
         build['changelogUrl'] = release['html_url']
       seed = str(build.get('timestamp',0))+build.get('model','')+build.get('apiLevel','')
       build['uid'] = hashlib.sha256(seed.encode('utf-8')).hexdigest()
-      self.__builds.append(build)
+      if 'model' in build:
+        self.__builds.append(build)
+      else:
+        print(f'Skipping release "{release.get("name")}" (No valid zip/model found)')
+
     except Exception as error:
       print(error)
 
@@ -211,7 +215,7 @@ class LOTABuilds:
 
   def writeApiFiles(self):
     self.__prepareOutput()
-    models = set([build['model'] for build in self.__builds])
+    models = set([build.get('model') for build in self.__builds if build.get('model')])
     channels = set([build['channel'] for build in self.__builds])
     for model in models:
       for channel in channels:
